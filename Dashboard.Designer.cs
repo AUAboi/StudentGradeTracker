@@ -32,9 +32,9 @@
             this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gradesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentsGridView = new System.Windows.Forms.DataGridView();
             this.addNewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentsGridView = new System.Windows.Forms.DataGridView();
+            this.viewAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +46,7 @@
             this.gradesToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(617, 24);
+            this.mainMenu.Size = new System.Drawing.Size(813, 24);
             this.mainMenu.TabIndex = 1;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -68,18 +68,18 @@
             // gradesToolStripMenuItem
             // 
             this.gradesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewAllToolStripMenuItem1,
-            this.addNewToolStripMenuItem1});
+            this.addNewToolStripMenuItem1,
+            this.viewAllToolStripMenuItem});
             this.gradesToolStripMenuItem.Name = "gradesToolStripMenuItem";
             this.gradesToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.gradesToolStripMenuItem.Text = "Grades";
             // 
-            // viewAllToolStripMenuItem1
+            // addNewToolStripMenuItem1
             // 
-            this.viewAllToolStripMenuItem1.Name = "viewAllToolStripMenuItem1";
-            this.viewAllToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.viewAllToolStripMenuItem1.Text = "View All";
-            this.viewAllToolStripMenuItem1.Click += new System.EventHandler(this.viewAllToolStripMenuItem1_Click);
+            this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
+            this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.addNewToolStripMenuItem1.Text = "Add New";
+            this.addNewToolStripMenuItem1.Click += new System.EventHandler(this.addNewToolStripMenuItem1_Click);
             // 
             // studentsGridView
             // 
@@ -95,18 +95,18 @@
             this.studentsGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentsGridView_CellEndEdit);
             this.studentsGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.studentsGridView_CellValidating);
             // 
-            // addNewToolStripMenuItem1
+            // viewAllToolStripMenuItem
             // 
-            this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
-            this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.addNewToolStripMenuItem1.Text = "Add New";
-            this.addNewToolStripMenuItem1.Click += new System.EventHandler(this.addNewToolStripMenuItem1_Click);
+            this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
+            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewAllToolStripMenuItem.Text = "View All";
+            this.viewAllToolStripMenuItem.Click += new System.EventHandler(this.viewAllToolStripMenuItem_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 409);
+            this.ClientSize = new System.Drawing.Size(813, 423);
             this.Controls.Add(this.studentsGridView);
             this.Controls.Add(this.mainMenu);
             this.IsMdiContainer = true;
@@ -130,7 +130,7 @@
         private DataGridView studentsGridView;
       
         private ToolStripMenuItem gradesToolStripMenuItem;
-        private ToolStripMenuItem viewAllToolStripMenuItem1;
         private ToolStripMenuItem addNewToolStripMenuItem1;
+        private ToolStripMenuItem viewAllToolStripMenuItem;
     }
 }

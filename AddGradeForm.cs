@@ -45,11 +45,13 @@ namespace StudentGradeTracker
 
         private void mainButton1_Click(object sender, EventArgs e)
         {
+      
             if (ValidationHelper.IsNotEmpty(new List<string> { midTerm.Text, finalTerm.Text }))
             { 
                 MessageBox.Show("Fill all fields"); 
                 return; 
             }
+
             GradeService gradeService = new GradeService();
 
             Course? selectedCourse = comboBox2.SelectedItem as Course;
@@ -58,8 +60,8 @@ namespace StudentGradeTracker
             if (selectedCourse == null || selectedStudent == null)
             {
                 MessageBox.Show("Please select a course and a student.");
+                return;
             }
-
 
             try
             {
@@ -67,12 +69,14 @@ namespace StudentGradeTracker
                 {
                     StudentId = selectedStudent.ID,
                     CourseId = selectedCourse.Id,
-                    Midterm = Convert.ToInt32(midTerm.Text),
-                    Final = Convert.ToInt32(finalTerm.Text),
+                    Midterm = Convert.ToDouble(midTerm.Text),
+                    Final = Convert.ToDouble(finalTerm.Text),
                     Semester = semester.Text,
                     Date = date.Value,
                 });
-            } catch (Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;

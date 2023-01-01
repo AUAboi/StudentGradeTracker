@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StudentGradeTracker.Helpers;
+using StudentGradeTracker.Services;
 
 namespace StudentGradeTracker.Models
 {
@@ -17,6 +18,9 @@ namespace StudentGradeTracker.Models
         public int PracticalCreditHours { get; set; }
         public int TheoryCreditHours { get; set; }
         public string DepartmentCode { get; set; } = string.Empty;
+
+        
+
 
         public static List<Course> All()
         {

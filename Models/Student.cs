@@ -18,7 +18,18 @@ namespace StudentGradeTracker.Models
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;
-        public List<Grade>? Grades { get; set; }
+        //public List<Grade>? Grades { get; set; }
+
+        public List<Grade> Grades
+        {
+            get
+            {
+                // Use the student ID to fetch the grades from the database
+                List<Grade> grades = Grade.All().Where(g => g.StudentId == this.ID).ToList();
+                return grades;
+            }
+        }
+
 
 
         /// <summary>

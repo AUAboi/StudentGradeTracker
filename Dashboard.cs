@@ -119,9 +119,10 @@ namespace StudentGradeTracker
             new AddGradeForm().ShowDialog();
         }
 
-        private void viewAllToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void viewAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new ViewAllGradesForm().Show();
         }
     }
 }
