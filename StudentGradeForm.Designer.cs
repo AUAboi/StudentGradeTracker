@@ -38,6 +38,8 @@
             this.Finals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MarksPercentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QualityPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gpaText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.studentGradeTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,11 +129,32 @@
             this.QualityPoints.HeaderText = "Quality Points";
             this.QualityPoints.Name = "QualityPoints";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(86, 410);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 52);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "GPA:";
+            // 
+            // gpaText
+            // 
+            this.gpaText.AutoSize = true;
+            this.gpaText.Font = new System.Drawing.Font("Segoe UI", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.gpaText.Location = new System.Drawing.Point(193, 410);
+            this.gpaText.Name = "gpaText";
+            this.gpaText.Size = new System.Drawing.Size(0, 52);
+            this.gpaText.TabIndex = 5;
+            // 
             // StudentGradeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(815, 499);
+            this.Controls.Add(this.gpaText);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.studentGradeTable);
             this.Controls.Add(this.mainButton1);
             this.Controls.Add(this.comboBox2);
@@ -141,6 +164,7 @@
             this.Load += new System.EventHandler(this.StudentGradeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studentGradeTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -156,5 +180,7 @@
         private DataGridViewTextBoxColumn Finals;
         private DataGridViewTextBoxColumn MarksPercentage;
         private DataGridViewTextBoxColumn QualityPoints;
+        private Label label1;
+        private Label gpaText;
     }
 }

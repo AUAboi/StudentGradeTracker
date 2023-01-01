@@ -105,7 +105,7 @@ namespace StudentGradeTracker.Models
 
         public double GetGradePoint()
         {
-            var subPerc = (this.Midterm + this.Final) / (this.Course.TotalCreditHours * Models.Course.CREDIT_HOUR_MARKS);
+            var subPerc = Percentage;
             double l = subPerc % 10;
             double gradePoint = 0;
             if (subPerc < 50)

@@ -36,6 +36,7 @@ namespace StudentGradeTracker
         {
             studentGradeTable.Rows.Clear();
             studentGradeTable.Refresh();
+            
 
             Student? selectedStudent = comboBox1.SelectedItem as Student;
 
@@ -51,9 +52,10 @@ namespace StudentGradeTracker
 
             foreach (Grade grade in grades)
             {
-
                 studentGradeTable.Rows.Add(grade.Course.CourseName, grade.Course.TotalMarks, grade.Midterm, grade.Final, grade.Percentage, grade.QualityPoints);
             }
+
+            gpaText.Text =  gradeService.CalculateGPA(grades, comboBox2.Text).ToString("#.##");
         }
     }
 }
