@@ -12,6 +12,7 @@ namespace StudentGradeTracker.Models
 {
     public class Course
     {
+        public const int CREDIT_HOUR_MARKS = 20;
         public int Id { get; set; }
         public string CourseName { get; set; } = string.Empty;
         public int CourseCode { get; set; } 
@@ -20,7 +21,21 @@ namespace StudentGradeTracker.Models
         public string DepartmentCode { get; set; } = string.Empty;
 
         
+        public int TotalCreditHours
+        {
+            get
+            {
+                return TheoryCreditHours + PracticalCreditHours;
+            }
+        }
 
+        public int TotalMarks
+        {
+            get
+            {
+                return this.TotalCreditHours * CREDIT_HOUR_MARKS;
+            }
+        }
 
         public static List<Course> All()
         {

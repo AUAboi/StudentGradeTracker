@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace StudentGradeTracker.Models
 {
@@ -16,12 +17,19 @@ namespace StudentGradeTracker.Models
         public int Id { get; set; }
         public int StudentId { get; set; }
         public int CourseId { get; set; }
-
         public double Midterm { get; set; }
         public double Final { get; set; }
         public string Semester { get; set; } = string.Empty;
+
+
         public DateTime Date { get; set; }
 
+        public double Percentage {
+            get
+            {
+                return ((Midterm + Final) / (Course.TotalMarks)) * 100;
+            }
+           }
         //Fetch associated course
         public Course? Course
         {
@@ -30,6 +38,16 @@ namespace StudentGradeTracker.Models
                 CourseService courseService = new CourseService();
                 Course? course = courseService.FindById(CourseId);
                 return course;
+            }
+        }
+
+        public double QualityPoints
+        {
+            get
+            {
+                double qualityPoints = 0;
+                qualityPoints = GetGradePoint() * Course.TotalCreditHours;
+                return qualityPoints;
             }
         }
 
@@ -85,6 +103,39 @@ namespace StudentGradeTracker.Models
             }
         }
 
+        public double GetGradePoint()
+        {
+            var subPerc = (this.Midterm + this.Final) / (this.Course.TotalCreditHours * Models.Course.CREDIT_HOUR_MARKS);
+            double l = subPerc % 10;
+            double gradePoint = 0;
+            if (subPerc < 50)
+            {
+                gradePoint = 1 + l / 10;
+            }
+            else if (subPerc < 60)
+            {
+                gradePoint = 2 + (l / 100) * 7;
+            }
+            else if (subPerc < 65)
+            {
+                gradePoint = 2.7 + (l / 100) * 6;
+            }
+            else if (subPerc <= 84)
+            {
+                int temp = (int)(85 - subPerc);
+                double tempNum = -0.05;
+                for (int i = 20; i >= temp; i--)
+                {
+                    tempNum += 0.05;
+                }
+                gradePoint = 3 + tempNum;
+            }
+            else if (subPerc >= 85)
+            {
+                gradePoint = 4;
+            }
+            return gradePoint;
+        }
 
     }
 

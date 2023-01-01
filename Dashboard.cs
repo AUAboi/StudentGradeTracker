@@ -121,8 +121,13 @@ namespace StudentGradeTracker
 
         private void viewAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new ViewAllGradesForm().Show();
+            new ViewAllGradesForm().ShowDialog();
+        }
+
+        private void byStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new StudentGradeForm().ShowDialog();
+
         }
     }
 }

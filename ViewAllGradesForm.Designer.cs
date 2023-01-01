@@ -29,17 +29,60 @@
         private void InitializeComponent()
         {
             this.gradeTable = new System.Windows.Forms.DataGridView();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Midterm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Finalterm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Semester = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gradeTable)).BeginInit();
             this.SuspendLayout();
             // 
             // gradeTable
             // 
             this.gradeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gradeTable.Location = new System.Drawing.Point(101, 132);
+            this.gradeTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.StudentName,
+            this.CourseName,
+            this.Midterm,
+            this.Finalterm,
+            this.Semester,
+            this.Date});
+            this.gradeTable.Location = new System.Drawing.Point(1, 56);
             this.gradeTable.Name = "gradeTable";
             this.gradeTable.RowTemplate.Height = 25;
-            this.gradeTable.Size = new System.Drawing.Size(240, 150);
+            this.gradeTable.Size = new System.Drawing.Size(710, 368);
             this.gradeTable.TabIndex = 0;
+            // 
+            // StudentName
+            // 
+            this.StudentName.HeaderText = "Name";
+            this.StudentName.Name = "StudentName";
+            // 
+            // CourseName
+            // 
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.Name = "CourseName";
+            // 
+            // Midterm
+            // 
+            this.Midterm.HeaderText = "Mid Terms";
+            this.Midterm.Name = "Midterm";
+            // 
+            // Finalterm
+            // 
+            this.Finalterm.HeaderText = "Final Term";
+            this.Finalterm.Name = "Finalterm";
+            // 
+            // Semester
+            // 
+            this.Semester.HeaderText = "Semester";
+            this.Semester.Name = "Semester";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
             // 
             // ViewAllGradesForm
             // 
@@ -58,5 +101,11 @@
         #endregion
 
         private DataGridView gradeTable;
+        private DataGridViewTextBoxColumn StudentName;
+        private DataGridViewTextBoxColumn CourseName;
+        private DataGridViewTextBoxColumn Midterm;
+        private DataGridViewTextBoxColumn Finalterm;
+        private DataGridViewTextBoxColumn Semester;
+        private DataGridViewTextBoxColumn Date;
     }
 }

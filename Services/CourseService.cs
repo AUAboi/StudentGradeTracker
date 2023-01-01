@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StudentGradeTracker.Helpers;
 
 namespace StudentGradeTracker.Services
 {
@@ -14,8 +15,7 @@ namespace StudentGradeTracker.Services
     {
         public Course? FindById(int id)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connection.connectionString))
             {
                 connection.Open();
 

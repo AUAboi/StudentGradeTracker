@@ -1,4 +1,5 @@
 ﻿using StudentGradeTracker.Models;
+using StudentGradeTracker.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace StudentGradeTracker
 
         private void ViewAllGradesForm_Load(object sender, EventArgs e)
         {
+            GradeService gradeService = new GradeService();
             List<Student> students = Student.All();
 
             foreach (Student student in students)

@@ -33,8 +33,9 @@
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gradesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentsGridView = new System.Windows.Forms.DataGridView();
             this.viewAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentsGridView = new System.Windows.Forms.DataGridView();
+            this.byStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             // addNewToolStripMenuItem
             // 
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewToolStripMenuItem.Text = "Add new";
             this.addNewToolStripMenuItem.Click += new System.EventHandler(this.addNewToolStripMenuItem_Click);
             // 
@@ -69,7 +70,8 @@
             // 
             this.gradesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewToolStripMenuItem1,
-            this.viewAllToolStripMenuItem});
+            this.viewAllToolStripMenuItem,
+            this.byStudentToolStripMenuItem});
             this.gradesToolStripMenuItem.Name = "gradesToolStripMenuItem";
             this.gradesToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.gradesToolStripMenuItem.Text = "Grades";
@@ -77,9 +79,16 @@
             // addNewToolStripMenuItem1
             // 
             this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
-            this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.addNewToolStripMenuItem1.Text = "Add New";
             this.addNewToolStripMenuItem1.Click += new System.EventHandler(this.addNewToolStripMenuItem1_Click);
+            // 
+            // viewAllToolStripMenuItem
+            // 
+            this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
+            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewAllToolStripMenuItem.Text = "View All";
+            this.viewAllToolStripMenuItem.Click += new System.EventHandler(this.viewAllToolStripMenuItem_Click);
             // 
             // studentsGridView
             // 
@@ -95,12 +104,12 @@
             this.studentsGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentsGridView_CellEndEdit);
             this.studentsGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.studentsGridView_CellValidating);
             // 
-            // viewAllToolStripMenuItem
+            // byStudentToolStripMenuItem
             // 
-            this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
-            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.viewAllToolStripMenuItem.Text = "View All";
-            this.viewAllToolStripMenuItem.Click += new System.EventHandler(this.viewAllToolStripMenuItem_Click);
+            this.byStudentToolStripMenuItem.Name = "byStudentToolStripMenuItem";
+            this.byStudentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.byStudentToolStripMenuItem.Text = "By Student";
+            this.byStudentToolStripMenuItem.Click += new System.EventHandler(this.byStudentToolStripMenuItem_Click);
             // 
             // Dashboard
             // 
@@ -132,5 +141,6 @@
         private ToolStripMenuItem gradesToolStripMenuItem;
         private ToolStripMenuItem addNewToolStripMenuItem1;
         private ToolStripMenuItem viewAllToolStripMenuItem;
+        private ToolStripMenuItem byStudentToolStripMenuItem;
     }
 }
