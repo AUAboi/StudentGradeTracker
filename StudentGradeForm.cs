@@ -41,6 +41,7 @@ namespace StudentGradeTracker
             Student? selectedStudent = comboBox1.SelectedItem as Student;
 
             GradeService gradeService = new GradeService();
+            StudentService studentService = new StudentService();
             if(selectedStudent == null)
             {
                 MessageBox.Show("Select a student");
@@ -49,13 +50,13 @@ namespace StudentGradeTracker
 
             List<Grade> grades = selectedStudent.Grades.Where(g => g.Semester == comboBox2.Text).ToList();
 
-
             foreach (Grade grade in grades)
             {
-                studentGradeTable.Rows.Add(grade.Course.CourseName, grade.Course.TotalMarks, grade.Midterm, grade.Final, grade.Percentage, grade.LetterGrade, grade.QualityPoints);
+                studentGradeTable.Rows.Add(grade.Course.CourseName, grade.Course.TotalMarks, grade.Midterm, grade.Final, grade.Percentage.ToString("#.##"), grade.LetterGrade, grade.QualityPoints.ToString("#.##"));
             }
 
             gpaText.Text =  gradeService.CalculateGPA(grades, comboBox2.Text).ToString("#.##");
+            cgpaText.Text = studentService.GetStudentCGPA(selectedStudent).ToString("#.##");
         }
     }
 }
