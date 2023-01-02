@@ -52,7 +52,7 @@ namespace StudentGradeTracker
 
             foreach (Grade grade in grades)
             {
-                studentGradeTable.Rows.Add(grade.Course.CourseName, grade.Course.TotalMarks, grade.Midterm, grade.Final, grade.Percentage, grade.QualityPoints);
+                studentGradeTable.Rows.Add(grade.Course.CourseName, grade.Course.TotalMarks, grade.Midterm, grade.Final, grade.Percentage, grade.LetterGrade, grade.QualityPoints);
             }
 
             gpaText.Text =  gradeService.CalculateGPA(grades, comboBox2.Text).ToString("#.##");

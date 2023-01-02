@@ -13,7 +13,7 @@ namespace StudentGradeTracker.Services
 {
     public class CourseService
     {
-        public Course? FindById(int id)
+        public Course FindById(int id)
         {
             using (SqlConnection connection = new SqlConnection(Connection.connectionString))
             {

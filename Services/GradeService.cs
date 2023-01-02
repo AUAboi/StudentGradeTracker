@@ -78,6 +78,95 @@ namespace StudentGradeTracker.Services
             return grades;
         }
 
+        public string GetLetterGrade(double percentage)
+        {
+            if (percentage >= 90)
+            {
+                return "A+";
+            }
+            else if (percentage >= 85)
+            {
+                return "A";
+            }
+            else if (percentage >= 80)
+            {
+                return "A-";
+            }
+            else if (percentage >= 70)
+            {
+                return "B+";
+            }
+            else if (percentage >= 65)
+            {
+                return "B";
+            }
+            else if (percentage >= 60)
+            {
+                return "B-";
+            }
+            else if (percentage >= 50)
+            {
+                return "C+";
+            }
+            else if (percentage >= 45)
+            {
+                return "C";
+            }
+            else if (percentage >= 40)
+            {
+                return "C-";
+            }
+            else if (percentage >= 30)
+            {
+                return "D+";
+            }
+            else if (percentage >= 25)
+            {
+                return "D";
+            }
+            else if (percentage >= 20)
+            {
+                return "D-";
+            }
+            else
+            {
+                return "F";
+            }
+        }
+      
+        public double GetGradePoint(double percentage)
+        {
+
+            double l = percentage % 10;
+            double gradePoint = 0;
+            if (percentage < 50)
+            {
+                gradePoint = 1 + l / 10;
+            }
+            else if (percentage < 60)
+            {
+                gradePoint = 2 + (l / 100) * 7;
+            }
+            else if (percentage < 65)
+            {
+                gradePoint = 2.7 + (l / 100) * 6;
+            }
+            else if (percentage <= 84)
+            {
+                int temp = (int)(85 - percentage);
+                double tempNum = -0.05;
+                for (int i = 20; i >= temp; i--)
+                {
+                    tempNum += 0.05;
+                }
+                gradePoint = 3 + tempNum;
+            }
+            else if (percentage >= 85)
+            {
+                gradePoint = 4;
+            }
+            return gradePoint;
+        }
 
     }
 }
