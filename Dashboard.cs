@@ -129,5 +129,10 @@ namespace StudentGradeTracker
             new StudentGradeForm().ShowDialog();
 
         }
+
+        private void addNewToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new CourseCreateForm().ShowDialog();
+        }
     }
 }

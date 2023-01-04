@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using StudentGradeTracker.Helpers;
 using StudentGradeTracker.Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 
 namespace StudentGradeTracker.Models
 {
@@ -20,7 +22,34 @@ namespace StudentGradeTracker.Models
         public int TheoryCreditHours { get; set; }
         public string DepartmentCode { get; set; } = string.Empty;
 
-        
+        public void create()
+        {
+            try
+            {
+                string query = "INSERT INTO Courses (CourseName, PracticalCreditHours, TheoryCreditHours, CourseCode, DepartmentCode) VALUES (@name, @practical, @theory, @ccode, @dcode)";
+
+
+                using (SqlConnection connection = new SqlConnection(Connection.connectionString))
+                {
+                    connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.InsertCommand = new SqlCommand(query, connection);
+                    adapter.InsertCommand.Parameters.AddWithValue("@name", this.CourseName);
+                    adapter.InsertCommand.Parameters.AddWithValue("@practical", this.PracticalCreditHours);
+                    adapter.InsertCommand.Parameters.AddWithValue("@theory", this.TheoryCreditHours);
+                    adapter.InsertCommand.Parameters.AddWithValue("@ccode", this.CourseCode);
+                    adapter.InsertCommand.Parameters.AddWithValue("@dcode", this.DepartmentCode);
+
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+                //throw new Exception("An error occurred while processing the request", ex);
+            }
+        }
         public int TotalCreditHours
         {
             get
@@ -36,6 +65,8 @@ namespace StudentGradeTracker.Models
                 return this.TotalCreditHours * CREDIT_HOUR_MARKS;
             }
         }
+
+
 
         public static List<Course> All()
         {

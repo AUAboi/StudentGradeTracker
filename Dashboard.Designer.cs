@@ -34,8 +34,10 @@
             this.gradesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentsGridView = new System.Windows.Forms.DataGridView();
             this.byStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentsGridView = new System.Windows.Forms.DataGridView();
+            this.coursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +46,8 @@
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentsToolStripMenuItem,
-            this.gradesToolStripMenuItem});
+            this.gradesToolStripMenuItem,
+            this.coursesToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(813, 24);
@@ -63,7 +66,7 @@
             // 
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
             this.addNewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addNewToolStripMenuItem.Text = "Add new";
+            this.addNewToolStripMenuItem.Text = "Add New";
             this.addNewToolStripMenuItem.Click += new System.EventHandler(this.addNewToolStripMenuItem_Click);
             // 
             // gradesToolStripMenuItem
@@ -90,6 +93,13 @@
             this.viewAllToolStripMenuItem.Text = "View All";
             this.viewAllToolStripMenuItem.Click += new System.EventHandler(this.viewAllToolStripMenuItem_Click);
             // 
+            // byStudentToolStripMenuItem
+            // 
+            this.byStudentToolStripMenuItem.Name = "byStudentToolStripMenuItem";
+            this.byStudentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.byStudentToolStripMenuItem.Text = "By Student";
+            this.byStudentToolStripMenuItem.Click += new System.EventHandler(this.byStudentToolStripMenuItem_Click);
+            // 
             // studentsGridView
             // 
             this.studentsGridView.AllowUserToAddRows = false;
@@ -104,12 +114,20 @@
             this.studentsGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentsGridView_CellEndEdit);
             this.studentsGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.studentsGridView_CellValidating);
             // 
-            // byStudentToolStripMenuItem
+            // coursesToolStripMenuItem
             // 
-            this.byStudentToolStripMenuItem.Name = "byStudentToolStripMenuItem";
-            this.byStudentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.byStudentToolStripMenuItem.Text = "By Student";
-            this.byStudentToolStripMenuItem.Click += new System.EventHandler(this.byStudentToolStripMenuItem_Click);
+            this.coursesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewToolStripMenuItem2});
+            this.coursesToolStripMenuItem.Name = "coursesToolStripMenuItem";
+            this.coursesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.coursesToolStripMenuItem.Text = "Courses";
+            // 
+            // addNewToolStripMenuItem2
+            // 
+            this.addNewToolStripMenuItem2.Name = "addNewToolStripMenuItem2";
+            this.addNewToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.addNewToolStripMenuItem2.Text = "Add New";
+            this.addNewToolStripMenuItem2.Click += new System.EventHandler(this.addNewToolStripMenuItem2_Click);
             // 
             // Dashboard
             // 
@@ -142,5 +160,7 @@
         private ToolStripMenuItem addNewToolStripMenuItem1;
         private ToolStripMenuItem viewAllToolStripMenuItem;
         private ToolStripMenuItem byStudentToolStripMenuItem;
+        private ToolStripMenuItem coursesToolStripMenuItem;
+        private ToolStripMenuItem addNewToolStripMenuItem2;
     }
 }
