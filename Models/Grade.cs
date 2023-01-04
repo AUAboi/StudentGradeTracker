@@ -110,6 +110,31 @@ namespace StudentGradeTracker.Models
             }
         }
 
+        public void delete()
+        {
+            try
+            {
+                string query = "DELETE FROM Grades WHERE Id = @id";
+
+                using (SqlConnection connection = new SqlConnection(Connection.connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@id", Id);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.DeleteCommand = command;
+
+                    adapter.DeleteCommand.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to delete grade", ex);
+            }
+
+        }
+
     }
 
 }

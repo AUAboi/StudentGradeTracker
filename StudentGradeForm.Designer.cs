@@ -32,6 +32,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.mainButton1 = new StudentGradeTracker.Components.MainButton();
             this.studentGradeTable = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Course = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaxMarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mids = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +94,7 @@
             // 
             this.studentGradeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.studentGradeTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Course,
             this.MaxMarks,
             this.Mids,
@@ -103,8 +105,15 @@
             this.studentGradeTable.Location = new System.Drawing.Point(12, 148);
             this.studentGradeTable.Name = "studentGradeTable";
             this.studentGradeTable.RowTemplate.Height = 25;
-            this.studentGradeTable.Size = new System.Drawing.Size(744, 249);
+            this.studentGradeTable.Size = new System.Drawing.Size(851, 252);
             this.studentGradeTable.TabIndex = 3;
+            this.studentGradeTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentGradeTable_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // Course
             // 
@@ -209,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 526);
+            this.ClientSize = new System.Drawing.Size(925, 526);
             this.Controls.Add(this.cgpaText);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -238,6 +247,12 @@
         private DataGridView studentGradeTable;
         private Label label1;
         private Label gpaText;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label cgpaText;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Course;
         private DataGridViewTextBoxColumn MaxMarks;
         private DataGridViewTextBoxColumn Mids;
@@ -245,10 +260,5 @@
         private DataGridViewTextBoxColumn MarksPercentage;
         private DataGridViewTextBoxColumn LetterGrade;
         private DataGridViewTextBoxColumn QualityPoints;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label cgpaText;
     }
 }

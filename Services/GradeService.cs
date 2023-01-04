@@ -33,6 +33,7 @@ namespace StudentGradeTracker.Services
             }
         }
 
+
         public double CalculateGPA(List<Grade> grades, string semester)
         {
             double totalQualityPoints = grades.Where(g => g.Semester == semester)
