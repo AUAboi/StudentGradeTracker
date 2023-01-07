@@ -218,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 526);
+            this.ClientSize = new System.Drawing.Size(896, 524);
             this.Controls.Add(this.cgpaText);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

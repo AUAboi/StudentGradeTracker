@@ -40,6 +40,9 @@
             // 
             // gradeTable
             // 
+            this.gradeTable.AllowUserToAddRows = false;
+            this.gradeTable.AllowUserToDeleteRows = false;
+            this.gradeTable.AllowUserToOrderColumns = true;
             this.gradeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gradeTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentName,
@@ -48,10 +51,10 @@
             this.Finalterm,
             this.Semester,
             this.Date});
-            this.gradeTable.Location = new System.Drawing.Point(1, 56);
+            this.gradeTable.Location = new System.Drawing.Point(1, 0);
             this.gradeTable.Name = "gradeTable";
             this.gradeTable.RowTemplate.Height = 25;
-            this.gradeTable.Size = new System.Drawing.Size(710, 368);
+            this.gradeTable.Size = new System.Drawing.Size(644, 450);
             this.gradeTable.TabIndex = 0;
             // 
             // StudentName
@@ -88,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(645, 450);
             this.Controls.Add(this.gradeTable);
             this.Name = "ViewAllGradesForm";
             this.Text = "ViewAllGradesForm";
